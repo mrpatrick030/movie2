@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #1b1b27;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background: #373b69;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.movie img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 14%;
+}
+
+.movie-info {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.movie-info h3 {
+  margin: 0;
+}
+
+.movie-over {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #4e4d4d;
+  color: #d7d9f3;
+  padding: 1rem;
+  transform: translateY(102%);
+  transition: transform 0.2s ease-in-out;
+  overflow: auto;
+  max-height: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+}
+.movie:hover .movie-over {
+  transform: translateX(0%);
+}
+
+header {
+  background: #373b69;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  width: 100%;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: 2px solid #1b1b27;
+  border-radius: 50px;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 1.5rem;
+}
+
+.search:focus {
+  outline: 0;
+}
+.tag {
+  background-color: #22254b;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tag.green {
+  color: green;
+}
+.tag.orange {
+  color: orange;
+}
+.tag.red {
+  color: red;
+}
+
+
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+h3[data-text="Mov-Rev"] {
+  font-size: 2.5rem;
+  color: #6b73ff73;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  -webkit-text-stroke: 2px white;
+}
+
+h3[data-text="Mov-Rev"]::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  background-color: white;
+  animation: typing 8s steps(40, end) forwards;
+}
+
+#searchBtn {
+  background-color: #6b73ff73;
+  color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 6px;
+  display: none;
+}
+#footer {
+  padding: 3rem;
+  background: #373b69;
+}
+
+.animated-paragraph {
+  position: absolute;
+  top: 65%;
+  right: 0;
+  left: 0;
+  animation: moveInOut 7s linear infinite alternate;
+  text-align: center;
+}
+
+@keyframes moveInOut {
+  0% {
+    right: 10; 
+  }
+  100% {
+    right: 10%; 
+  }
+}
+
+
+
+
+@media (min-width: 390px) and (max-width: 767px) {
+  #title {
+    font-size: 1rem;
+    -webkit-text-stroke: 0.5px white;
+  }
+  .search {
+    font-family: inherit;
+    font-size: 0.6rem;
+    border: 2px solid #1b1b27;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    padding: 0.4rem 0.7rem;
+  }
+  #searchBtn {
+    background-color: #1b1b27;
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 4px;
+    display: inline-flex;
+    margin-left: 0.7rem;
+  }
+  form {
+    display: flex;
+  }
+  .movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20%;
+  } 
+  .animated-paragraph {
+    font-size: 6px; 
+    top: 70%;
+  }
+  h3{
+    font-size: 14px;
+  }
+
+}
+@media only screen and (max-width: 576px) {
+   #title {
+    font-size: 1rem;
+    -webkit-text-stroke: 0.5px white;
+  }
+  .search {
+    font-family: inherit;
+    font-size: 0.6rem;
+    border: 2px solid #1b1b27;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    padding: 0.4rem 0.7rem;
+  }
+  #searchBtn {
+    background-color: #1b1b27;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px;
+    display: inline-flex;
+    margin-left: 0.7rem;
+  }
+  form {
+    display: flex;
+  }
+  .movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20%;
+  } 
+  .animated-paragraph {
+    font-size: 6px; 
+    top: 70%;
+  }
+}
+
